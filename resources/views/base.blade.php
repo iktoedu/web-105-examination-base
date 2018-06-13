@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Тестовий проект на базі Laravel</title>
+    <title>Тварини</title>
     <link href="{{ asset('/css/app.css')  }}" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="{{ asset('/js/app.js') }}"></script>
 </head>
@@ -12,12 +12,12 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{ url('/') }}">Тестовий проект на базі Laravel</a>
+            <a class="navbar-brand" href="{{ url('/') }}">Тварини</a>
         </div>
     </div>
 </nav>
 <div class="container-fluid">
-    <h1>Тестовий проект на базі Laravel</h1>
+    <h1>Тварини</h1>
 
     @yield('content')
 </div>
