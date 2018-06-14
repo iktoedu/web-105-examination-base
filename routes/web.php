@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +10,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+use Illuminate\Http\Request;
+use App\Book;
+
+Route::get('/', 'IndexController@index');
+Route::get('/games/{id}', 'IndexController@show')->name('gameShow');
+
+Auth::routes();
