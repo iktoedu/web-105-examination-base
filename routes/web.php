@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +10,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+use Illuminate\Http\Request;
+use App\Book;
+
+Route::get('/', 'IndexController@index');
+
+Route::get('/add', [
+    'uses' => 'IndexController@add'
+]);
+
+Route::post('/add', 'IndexController@store')->name('bookStore');
+
+Auth::routes();
