@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'Controller@index')->name('index');
+Route::delete('index/delete/{animal}', function(\App\Animal $animal){
+ $animal->delete();
+ return redirect('/');
+ 
+ })->name('animalDelete');
