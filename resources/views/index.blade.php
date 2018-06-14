@@ -2,20 +2,22 @@
 
 @section('content')
         <table class="table">
-            <tr>
+            <thead>
+                <tr>
                 <th>Автор</th>
                 <th>Назва</th>
-                <th>Жанр</th>
+                <th>Сторінок</th>
+                <th>Рік</th>
             </tr>
-            <thead>
-            @foreach($books as $books)
+            @foreach($books as $book)
             <tr>
-                <td>{{ $books -> author }}</td>
-                <td>{{ $books -> title }}</td>
-                <td>{{ $books -> pages }}</td>
+                <td>{{ $book -> author }}</td>
+                <td>{{ $book -> title }}</td>
+                <td>{{ $book -> pages }}</td>
+                <td>{{ $book -> issued }}</td>
+                <td><a href="{{ route('show',['id'=>$book->id]) }}">Показати</a></td>
             </tr>
             @endforeach
             </thead>
         </table>
-
 @endsection

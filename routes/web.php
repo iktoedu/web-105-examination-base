@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'Controller@index')->name('index');
+Route::get('/book/{id}', 'Controller@show')->name('show');
+

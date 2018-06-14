@@ -18,7 +18,6 @@
 </nav>
 <div class="container-fluid">
     <h1>Книги</h1>
-
     @yield('content')
 </div>
 </body>
