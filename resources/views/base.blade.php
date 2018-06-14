@@ -13,6 +13,7 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="{{ url('/') }}">Спортивні команди</a>
+            <a class="navbar-brand" href="{{ url('/add') }}">Добавити</a>
         </div>
     </div>
 </nav>

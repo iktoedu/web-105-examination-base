@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,7 +9,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('index');
-});
+use Illuminate\Http\Request;
+use App\Sport_Team;
+Route::get('/', 'IndexController@index');
+Route::get('/add', [
+    'uses' => 'IndexController@add'
+]);
+Route::post('/add', 'IndexController@store')->name('teamStore');
+Auth::routes();
