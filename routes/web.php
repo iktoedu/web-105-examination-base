@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'Controller@index')->name('index');
+Route::delete('index/delete/{videocard}', function(\App\Videocard $videocard){
+	$videocard->delete();
+	return redirect('/');
+	
+	})->name('videocardDelete');
