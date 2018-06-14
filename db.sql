@@ -11,32 +11,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table "cpu"
+-- Table structure for table "cpus"
 --
 
-DROP TABLE IF EXISTS "cpu";
+DROP TABLE IF EXISTS "cpus";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE "cpu" (
+CREATE TABLE "cpus" (
   "id" int(11) NOT NULL AUTO_INCREMENT,
   "id_vendor" int(11) NOT NULL,
   "model_name" varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   "cores_count" tinyint(3) unsigned NOT NULL,
   "flops" bigint(20) unsigned DEFAULT NULL,
   PRIMARY KEY ("id"),
-  KEY "fk_cpu_1_idx" ("id_vendor"),
-  CONSTRAINT "fk_cpu_1" FOREIGN KEY ("id_vendor") REFERENCES "vendor" ("id") ON UPDATE CASCADE
+  KEY "fk_cpus_1_idx" ("id_vendor"),
+  CONSTRAINT "fk_cpus_1" FOREIGN KEY ("id_vendor") REFERENCES "vendor" ("id") ON UPDATE CASCADE
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table "cpu"
+-- Dumping data for table "cpus"
 --
 
-LOCK TABLES "cpu" WRITE;
-/*!40000 ALTER TABLE "cpu" DISABLE KEYS */;
-INSERT INTO "cpu" VALUES (1,1,'Intel Pentium Gold G4560 3.5GHz/8GT/s/3MB',2,32321743215),(2,1,'Intel Core i3-7100 3.9GHz/8GT/s/3MB',2,651651786165),(3,2,'AMD Ryzen 5 2400G 3.6GHz / 4MB (YD2400C5FBBOX)',4,351355454232),(4,2,'AMD Trinity A4-5300 3.4GHz/1MB (AD5300OKHJBOX)',2,513465356886);
-/*!40000 ALTER TABLE "cpu" ENABLE KEYS */;
+LOCK TABLES "cpus" WRITE;
+/*!40000 ALTER TABLE "cpus" DISABLE KEYS */;
+INSERT INTO "cpus" VALUES (1,1,'Intel Pentium Gold G4560 3.5GHz/8GT/s/3MB',2,32321743215),(2,1,'Intel Core i3-7100 3.9GHz/8GT/s/3MB',2,651651786165),(3,2,'AMD Ryzen 5 2400G 3.6GHz / 4MB (YD2400C5FBBOX)',4,351355454232),(4,2,'AMD Trinity A4-5300 3.4GHz/1MB (AD5300OKHJBOX)',2,513465356886);
+/*!40000 ALTER TABLE "cpus" ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
