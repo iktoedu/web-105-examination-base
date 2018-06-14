@@ -12,12 +12,13 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{ url('/') }}">Книги</a>
+            <a class="navbar-brand" href="{{ url('/') }}">Home</a>
+            <a class="navbar-brand" href="{{ url('/add') }}">Add</a>
         </div>
     </div>
 </nav>
 <div class="container-fluid">
-    <h1>Книги</h1>
+    <h1>Books</h1>
 
     @yield('content')
 </div>

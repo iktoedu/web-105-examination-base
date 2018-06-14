@@ -11,13 +11,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table "book"
+-- Table structure for table "books"
 --
 
-DROP TABLE IF EXISTS "book";
+DROP TABLE IF EXISTS "books";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE "book" (
+CREATE TABLE "books" (
   "id" int(11) NOT NULL AUTO_INCREMENT,
   "id_genre" int(11) NOT NULL,
   "author" varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -28,28 +28,28 @@ CREATE TABLE "book" (
   "updated_at" datetime NOT NULL,
   PRIMARY KEY ("id"),
   KEY "fk_book_1_idx" ("id_genre"),
-  CONSTRAINT "fk_book_1" FOREIGN KEY ("id_genre") REFERENCES "genre" ("id") ON UPDATE CASCADE
+  CONSTRAINT "fk_book_1" FOREIGN KEY ("id_genre") REFERENCES "genres" ("id") ON UPDATE CASCADE
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table "book"
+-- Dumping data for table "books"
 --
 
-LOCK TABLES "book" WRITE;
-/*!40000 ALTER TABLE "book" DISABLE KEYS */;
-INSERT INTO "book" VALUES (1,1,'Стівен Кінг','Під куполом',1024,'2011','0000-00-00 00:00:00','0000-00-00 00:00:00'),(2,1,'Йен Макдональд','Бразилья',490,'2016','0000-00-00 00:00:00','0000-00-00 00:00:00'),(3,2,'Стивен Кинг','Зеленая миля',496,'1999','0000-00-00 00:00:00','0000-00-00 00:00:00'),(4,2,'Стиг Ларссон','Девушка, которая играла с огнём',720,'2006','0000-00-00 00:00:00','0000-00-00 00:00:00'),(5,2,'Томас Харрис','Ганнибал',484,'1999','0000-00-00 00:00:00','0000-00-00 00:00:00'),(6,3,'Артур Конан Дойль','Собака Баскервилей',150,'1902','0000-00-00 00:00:00','0000-00-00 00:00:00'),(7,3,'Жюль Верн','Вокруг света за восемьдесят дней',240,'1872','0000-00-00 00:00:00','0000-00-00 00:00:00'),(8,4,'Stephen Hawking','A Brief History of Time',256,'1988','0000-00-00 00:00:00','0000-00-00 00:00:00');
-/*!40000 ALTER TABLE "book" ENABLE KEYS */;
+LOCK TABLES "books" WRITE;
+/*!40000 ALTER TABLE "books" DISABLE KEYS */;
+INSERT INTO "books" VALUES (1,1,'Stephen King','Under the dome',1024,'2011','0000-00-00 00:00:00','0000-00-00 00:00:00'),(2,1,'Ian MacDonald','Brazil',490,'2016','0000-00-00 00:00:00','0000-00-00 00:00:00'),(3,2,'Stephen King','Green Mile',496,'1999','0000-00-00 00:00:00','0000-00-00 00:00:00'),(4,2,'Stig Larsson','The girl who played with fire',720,'2006','0000-00-00 00:00:00','0000-00-00 00:00:00'),(5,2,'Thomas Harris','Hannibal',484,'1999','0000-00-00 00:00:00','0000-00-00 00:00:00'),(6,3,'Arthur Conan Doyle','Hound of the Baskervilles',150,'1902','0000-00-00 00:00:00','0000-00-00 00:00:00'),(7,3,'Jules Verne','Around the world in eighty days',240,'1872','0000-00-00 00:00:00','0000-00-00 00:00:00'),(8,4,'Stephen Hawking','A Brief History of Time',256,'1988','0000-00-00 00:00:00','0000-00-00 00:00:00');
+/*!40000 ALTER TABLE "books" ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table "genre"
+-- Table structure for table "genres"
 --
 
-DROP TABLE IF EXISTS "genre";
+DROP TABLE IF EXISTS "genres";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE "genre" (
+CREATE TABLE "genres" (
   "id" int(11) NOT NULL AUTO_INCREMENT,
   "title" varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY ("id")
@@ -57,13 +57,13 @@ CREATE TABLE "genre" (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table "genre"
+-- Dumping data for table "genres"
 --
 
-LOCK TABLES "genre" WRITE;
-/*!40000 ALTER TABLE "genre" DISABLE KEYS */;
-INSERT INTO "genre" VALUES (1,'Фантастика'),(2,'Триллер'),(3,'Пригоди'),(4,'Наукова література');
-/*!40000 ALTER TABLE "genre" ENABLE KEYS */;
+LOCK TABLES "genres" WRITE;
+/*!40000 ALTER TABLE "genres" DISABLE KEYS */;
+INSERT INTO "genres" VALUES (1,'Fantastic'),(2,'Thriller'),(3,'Adventures'),(4,'Scientific literature');
+/*!40000 ALTER TABLE "genres" ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
