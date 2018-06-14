@@ -11,18 +11,20 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table "sport_team"
+-- Table structure for table "sport_teams"
 --
 
-DROP TABLE IF EXISTS "sport_team";
+DROP TABLE IF EXISTS "sport_teams";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE "sport_team" (
+CREATE TABLE "sport_teams" (
   "id" int(11) NOT NULL AUTO_INCREMENT,
   "id_sport_type" int(11) NOT NULL,
   "title" varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   "members_count" smallint(6) unsigned DEFAULT NULL,
   "success_pergentage" float DEFAULT NULL,
+  "created_at" datetime NOT NULL,
+  "updated_at" datetime NOT NULL,
   PRIMARY KEY ("id"),
   KEY "fk_sport_team_1_idx" ("id_sport_type"),
   CONSTRAINT "fk_sport_team_1" FOREIGN KEY ("id_sport_type") REFERENCES "sport_type" ("id") ON UPDATE CASCADE
@@ -30,13 +32,13 @@ CREATE TABLE "sport_team" (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table "sport_team"
+-- Dumping data for table "sport_teams"
 --
 
-LOCK TABLES "sport_team" WRITE;
-/*!40000 ALTER TABLE "sport_team" DISABLE KEYS */;
-INSERT INTO "sport_team" VALUES (1,1,'Р”РёРЅР°РјРѕ',70,52),(2,1,'Р—РѕСЂСЏ',22,18),(3,1,'Р›С–РІРµСЂРїСѓР»СЊ',54,84),(4,2,'Baltimore Orioles',45,42),(5,2,'Minnesota Twins',38,91),(6,3,'Р§РµСЂРєР°СЃСЊРєС– РјР°РІРїРё',10,56);
-/*!40000 ALTER TABLE "sport_team" ENABLE KEYS */;
+LOCK TABLES "sport_teams" WRITE;
+/*!40000 ALTER TABLE "sport_teams" DISABLE KEYS */;
+INSERT INTO "sport_teams" VALUES (1,1,'Динамо',70,52,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(2,1,'Зоря',22,18,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(3,1,'Ліверпуль',54,84,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(4,2,'Baltimore Orioles',45,42,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(5,2,'Minnesota Twins',38,91,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(6,3,'Черкаські мавпи',10,56,'0000-00-00 00:00:00','0000-00-00 00:00:00');
+/*!40000 ALTER TABLE "sport_teams" ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -59,7 +61,7 @@ CREATE TABLE "sport_type" (
 
 LOCK TABLES "sport_type" WRITE;
 /*!40000 ALTER TABLE "sport_type" DISABLE KEYS */;
-INSERT INTO "sport_type" VALUES (1,'Р¤СѓС‚Р±РѕР»'),(2,'Р‘РµР№СЃР±РѕР»'),(3,'Р‘Р°СЃРєРµС‚Р±РѕР»');
+INSERT INTO "sport_type" VALUES (1,'Футбол'),(2,'Бейсбол'),(3,'Баскетбол');
 /*!40000 ALTER TABLE "sport_type" ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
